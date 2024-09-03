@@ -1,0 +1,15 @@
+data_source snowflake_retail:
+  type: snowflake
+  username: ${SNOWFLAKE_USER}
+  password: ${SNOWFLAKE_PASSWORD}
+  account: ${SNOWFLAKE_ACCOUNT}
+  database: dbt_db
+  warehouse: compute_wh
+  connection_timeout: 240
+  role: ACCOUNTADMIN
+  client_session_keep_alive: true
+  session_params:
+    QUERY_TAG: soda-queries
+    QUOTED_IDENTIFIERS_IGNORE_CASE: false
+  schema: RETAIL
+

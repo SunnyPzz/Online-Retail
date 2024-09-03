@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw_source
+    database: dbt_db
+    schema: retail
+    tables:
+      - name: country
+      - name: raw_invoices
+

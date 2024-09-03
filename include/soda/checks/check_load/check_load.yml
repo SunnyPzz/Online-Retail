@@ -1,0 +1,22 @@
+checks for raw_invoices:
+  - schema:
+      fail:
+        when required column missing: 
+          - INVOICENO
+          - STOCKCODE
+          - INVOICEDATE
+          - QUANTITY
+          - CUSTOMERID
+          - UNITPRICE
+          - COUNTRY
+          - DESCRIPTION
+        when wrong column type:
+          INVOICENO: TEXT
+          STOCKCODE: TEXT
+          QUANTITY: NUMBER
+          INVOICEDATE: TEXT
+          UNITPRICE: NUMBER
+          CUSTOMERID: NUMBER
+          COUNTRY: TEXT
+          DESCRIPTION: TEXT
+        

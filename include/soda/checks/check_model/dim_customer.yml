@@ -1,0 +1,13 @@
+# dim_customer.yml
+checks for dim_customer:
+  - schema:
+      fail:
+        when required column missing: [CUSTOMER_ID, COUNTRY, '`ISO`']
+        when wrong column type:
+          CUSTOMER_ID: TEXT
+          COUNTRY: TEXT
+          '`ISO`': TEXT
+  - duplicate_count(customer_id) = 0:
+      name: All customers are unique
+  - missing_count(customer_id) = 0:
+      name: All customers have a key
